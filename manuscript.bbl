@@ -1,0 +1,105 @@
+\begin{thebibliography}{13}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Acemoglu et~al.(2018)Acemoglu, Makhdoumi, Malekian, and
+  Ozdaglar]{acemoglu2018}
+Daron Acemoglu, Ali Makhdoumi, Azarakhsh Malekian, and Asuman Ozdaglar.
+\newblock Informational {Braess'} paradox: The effect of information on traffic
+  congestion.
+\newblock \emph{Operations Research}, 66\penalty0 (4):\penalty0 893--917, 2018.
+\newblock \doi{10.1287/opre.2017.1712}.
+
+\bibitem[Angeletos and Pavan(2007)]{angeletos2007}
+George-Marios Angeletos and Alessandro Pavan.
+\newblock Efficient use of information and social value of information.
+\newblock \emph{Econometrica}, 75\penalty0 (4):\penalty0 1103--1142, 2007.
+\newblock \doi{10.1111/j.1468-0262.2007.00783.x}.
+
+\bibitem[Baek et~al.(2026)Baek, Bastani, and Chen]{baek2026}
+Jackie Baek, Hamsa Bastani, and Shihan Chen.
+\newblock Strategic hiring under algorithmic monoculture, 2026.
+\newblock URL \url{https://arxiv.org/abs/2502.20063v2}.
+\newblock arXiv:2502.20063v2. First posted 2025; revised February 18, 2026.
+
+\bibitem[Braess et~al.(2005)Braess, Nagurney, and Wakolbinger]{braess2005}
+Dietrich Braess, Anna Nagurney, and Tina Wakolbinger.
+\newblock On a paradox of traffic planning.
+\newblock \emph{Transportation Science}, 39\penalty0 (4):\penalty0 446--450,
+  2005.
+\newblock \doi{10.1287/trsc.1050.0127}.
+
+\bibitem[Chi and Yang(2026)]{chi2026}
+Feng Chi and Nathan Yang.
+\newblock Shared intelligence and misaligned firm entry, 2026.
+\newblock URL
+  \url{https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6799682}.
+\newblock SSRN working paper, revision September 10. Abstract consulted; full
+  text not examined.
+
+\bibitem[Chiang et~al.(2026)Chiang, Peng, Lichtenstein, McDaniel, O'Neil,
+  Thomas, Wright, Kleinberg, Tardos, and Garg]{chiang2026}
+Erica Chiang, Kenny Peng, Rebecca Lichtenstein, Brielle McDaniel, Kristen
+  O'Neil, Deja Thomas, Lianna Wright, Jon Kleinberg, Eva Tardos, and Nikhil
+  Garg.
+\newblock Personalized recommendations without inducing congestion: Mitigating
+  disparities in the {NYC} high school match, 2026.
+\newblock URL \url{https://arxiv.org/abs/2610.08275}.
+\newblock arXiv:2610.08275.
+
+\bibitem[Englander et~al.(2025)Englander, Karp, and Simon]{englander2025}
+Gabriel Englander, Larry Karp, and Leo Simon.
+\newblock The value of information in a congested fishery, 2025.
+\newblock URL
+  \url{https://www.restud.com/wp-content/uploads/2025/08/MS33001manuscript.pdf}.
+\newblock Author manuscript, July 21. Subsequently published online in The
+  Review of Economic Studies.
+
+\bibitem[Hedden and Raghavan(2026)]{hedden2026}
+Brian Hedden and Manish Raghavan.
+\newblock Algorithmic monoculture and its critics.
+\newblock \emph{Philosophical Perspectives}, 2026.
+\newblock \doi{10.1111/phpe.70018}.
+
+\bibitem[Kleinberg and Raghavan(2021)]{kleinberg2021}
+Jon Kleinberg and Manish Raghavan.
+\newblock Algorithmic monoculture and social welfare.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 118\penalty0
+  (22):\penalty0 e2018340118, 2021.
+\newblock \doi{10.1073/pnas.2018340118}.
+
+\bibitem[Morris and Shin(2002)]{morris2002}
+Stephen Morris and Hyun~Song Shin.
+\newblock Social value of public information.
+\newblock \emph{American Economic Review}, 92\penalty0 (5):\penalty0
+  1521--1534, 2002.
+\newblock \doi{10.1257/000282802762024610}.
+
+\bibitem[Perdomo et~al.(2020)Perdomo, Zrnic, Mendler-D{"u}nner, and
+  Hardt]{perdomo2020}
+Juan~C. Perdomo, Tijana Zrnic, Celestine Mendler-D{"u}nner, and Moritz Hardt.
+\newblock Performative prediction.
+\newblock In \emph{Proceedings of the 37th International Conference on Machine
+  Learning}, volume 119 of \emph{Proceedings of Machine Learning Research},
+  pages 7599--7609, 2020.
+\newblock URL \url{https://proceedings.mlr.press/v119/perdomo20a.html}.
+
+\bibitem[Svensson(2006)]{svensson2006}
+Lars E.~O. Svensson.
+\newblock Social value of public information: Comment: {Morris and Shin (2002)}
+  is actually pro-transparency, not con.
+\newblock \emph{American Economic Review}, 96\penalty0 (1):\penalty0 448--452,
+  2006.
+\newblock \doi{10.1257/000282806776157650}.
+
+\bibitem[Zhang et~al.(2024)Zhang, Hartline, and Hullman]{zhang2024}
+Dongping Zhang, Jason Hartline, and Jessica Hullman.
+\newblock Designing shared information displays for agents of varying strategic
+  sophistication.
+\newblock \emph{Proceedings of the ACM on Human-Computer Interaction}, 2024.
+\newblock \doi{10.1145/3637319}.
+
+\end{thebibliography}

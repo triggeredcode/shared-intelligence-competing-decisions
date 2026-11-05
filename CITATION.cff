@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this working paper or its analysis, please cite it."
+type: article
+title: "Shared Intelligence, Competing Decisions: Policy Adoption and Congestion under Common Advice"
+authors:
+  - family-names: Tripathi
+    given-names: Omkar
+    affiliation: Independent Researcher
+version: "1.0"
+date-released: 2026-11-05
+repository-code: "https://github.com/triggeredcode/shared-intelligence-competing-decisions"
+url: "https://github.com/triggeredcode/shared-intelligence-competing-decisions"
+keywords:
+  - congestion games
+  - algorithmic monoculture
+  - information economics
+  - policy adoption
