@@ -1,11 +1,11 @@
 # Shared Intelligence, Competing Decisions
 
 **Policy Adoption and Congestion under Common Advice**  
-Omkar Tripathi · Independent Researcher · [Author profile](https://github.com/triggeredcode)
+Omkar Tripathi · Independent Researcher · [Paper repository](https://github.com/triggeredcode/shared-intelligence-competing-decisions)
 
-[Read the paper](manuscript.pdf) · [Verification record](CHECKS.md)
+[Read the paper](manuscript.pdf) · [Five-slide overview](slides/shared-intelligence-slides.pdf) · [Editable slides](slides/shared-intelligence-slides.pptx) · [Verification record](CHECKS.md) · [Review response](REVIEW_RESPONSE.md)
 
-Working paper, version 1.0, 5 November 2026. Not peer reviewed.
+Working paper, version 1.1, 6 November 2026. Not peer reviewed.
 
 ## Research question
 
@@ -13,7 +13,7 @@ Can individually attractive access to more accurate, shared advice reduce averag
 
 The paper develops a two-opportunity policy-adoption game. Under explicitly stated assumptions, an interior symmetric adoption equilibrium lowers expected per-agent welfare relative to independent advice. It also studies finite adopter counts, partial commonality, and coordinated benchmarks. Greater commonality has different effects when adoption is held fixed and when adoption responds endogenously.
 
-The main result concerns policies selected before signals arrive. It does not establish the same result for unrestricted post-signal decision making. Numerical results are synthetic illustrations, not measured losses in real markets or evidence about particular AI products.
+The baseline result concerns policies selected before signals arrive. Proposition 6.1 also implements the interior symmetric outcome as a Bayesian Nash equilibrium when each agent observes only their own two signals. This is an existence result under a specific information structure, not a theorem about all post-signal decision making. Numerical results are synthetic illustrations, not measured losses in real markets or evidence about particular AI products.
 
 ## Reproduce
 
@@ -24,6 +24,7 @@ python -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
 python analysis.py .
+python verify_obedience.py .
 tectonic --keep-logs --keep-intermediates manuscript.tex
 ```
 
@@ -43,6 +44,9 @@ pdflatex manuscript.tex
 - `manuscript.pdf`, `manuscript.tex`: compiled paper and editable source.
 - `references.bib`, `manuscript.bbl`: bibliography source and compiled entries.
 - `analysis.py`: simulations, enumeration, and mathematical consistency checks.
+- `verify_obedience.py`, `obedience_results.json`: exact conditional Bayesian payoff checks.
+- `slides/`: five static slides in PDF, editable PowerPoint, and individual PNG formats.
+- `REVIEW_RESPONSE.md`: accepted improvements and corrections from an external AI review.
 - `results.json`, `finite_results.json`, `simulation_results.csv`: numerical outputs.
 - `curve.dat`, `commonality.dat`, `table_rows.tex`: generated figure and table inputs.
 - `CHECKS.md`: completed checks and their scope.

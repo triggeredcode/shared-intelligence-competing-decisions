@@ -1,0 +1,9 @@
+{
+  "equilibrium_parameter_cases": 37,
+  "equilibrium_signal_types": 148,
+  "off_equilibrium_signal_types": 16,
+  "calibration_agreement_gain": "401/875",
+  "calibration_disagreement_gain": "0",
+  "commonality_threshold": "203/792",
+  "arithmetic": "Python Fraction; exact state/signal enumeration"
+}

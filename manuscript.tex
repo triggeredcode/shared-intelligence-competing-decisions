@@ -24,12 +24,12 @@
 \newcommand{\Prb}{\mathbb P}
 \newcommand{\ind}{\mathbf 1}
 \title{Shared Intelligence, Competing Decisions:\\Policy Adoption and Congestion under Common Advice}
-\author{Omkar Tripathi\\\small Independent Researcher\\\small\url{https://github.com/triggeredcode}}
-\date{November 5, 2026}
+\author{Omkar Tripathi\\\small Independent Researcher\\\small\url{https://github.com/triggeredcode/shared-intelligence-competing-decisions}}
+\date{November 6, 2026}
 \begin{document}
 \maketitle
 \begin{abstract}
-A common decision policy may improve the accuracy of opportunity selection while concentrating participation in congestible opportunities. This paper studies a finite population choosing between a private-signal policy and a more accurate common-signal policy before signals are realized. An accounting identity separates expected intrinsic opportunity value from pairwise collision costs. In a binary-opportunity model, an interior symmetric mixed adoption equilibrium lowers expected participant payoff relative to the private-policy baseline whenever private signals are informative and the common policy is more accurate. The conclusion concerns commitment to executable policies, not unrestricted optimization after observing signals. We characterize pure adoption equilibria and fixed-count allocation, showing that the adverse effect need not be an artifact of independent adoption lotteries. A partial-commonality extension distinguishes comparisons at fixed adoption from comparisons with endogenous adoption. Exact enumeration, rational-arithmetic checks, and Monte Carlo calculations verify the analytical expressions. In an illustrative calibration, equilibrium adoption is approximately 40.5 percent, compared with a payoff-maximizing independent adoption rate of 15.3 percent. These calculations are synthetic and do not estimate losses from deployed artificial intelligence. The results clarify how accuracy, dependence, and strategic flexibility jointly determine the economic value of shared advice.
+A common decision policy may improve the accuracy of opportunity selection while concentrating participation in congestible opportunities. This paper studies a finite population choosing between a private-signal policy and a more accurate common-signal policy before signals are realized. An accounting identity separates expected intrinsic opportunity value from pairwise collision costs. In a binary-opportunity model, an interior symmetric mixed adoption equilibrium lowers expected participant payoff relative to the private-policy baseline whenever private signals are informative and the common policy is more accurate. The baseline uses executable policies; a separate result implements the interior outcome as a Bayesian equilibrium when agents observe only their own two signals. We characterize pure adoption equilibria and fixed-count allocation, showing that the adverse effect need not be an artifact of independent adoption lotteries. A partial-commonality extension distinguishes comparisons at fixed adoption from comparisons with endogenous adoption. Exact enumeration, rational-arithmetic checks, and Monte Carlo calculations verify the analytical expressions. In an illustrative calibration, equilibrium adoption is approximately 40.5 percent, compared with a payoff-maximizing independent adoption rate of 15.3 percent. These calculations are synthetic and do not estimate losses from deployed artificial intelligence. The results clarify how accuracy, dependence, and strategic flexibility jointly determine the economic value of shared advice.
 \end{abstract}
 \noindent\textbf{Keywords:} algorithmic monoculture; congestion games; information externalities; policy adoption; common signals.\\
 \textbf{JEL classification:} C72, D62, D83.
@@ -37,7 +37,7 @@ A common decision policy may improve the accuracy of opportunity selection while
 \section{Introduction}
 Common analytical systems increasingly motivate a question that cannot be answered by measuring prediction accuracy alone: what happens when many decision makers act on similar recommendations? An opportunity can be attractive before a population responds and less attractive after that response. Shared evidence, similar decision rules, and scarce capacity can therefore interact even when the underlying predictions are informative.
 
-This paper develops a deliberately small model of that interaction. Participants choose one of two executable policies before uncertainty resolves. One follows an independent private signal; the other follows a more accurate common signal. Both policies target one of two opportunities, and a participant's payoff declines linearly in the number of other participants choosing the same opportunity. The object of interest is the adoption game over these policies. Adoption is voluntary, but execution is committed: participants cannot combine signals or override the selected policy after observing its recommendation.
+This paper develops a deliberately small model of that interaction. Participants choose one of two executable policies before uncertainty resolves. One follows an independent private signal; the other follows a more accurate common signal. Both policies target one of two opportunities, and a participant's payoff declines linearly in the number of other participants choosing the same opportunity. The object of interest is the adoption game over these policies. Adoption is voluntary, but baseline execution is committed. Proposition~\ref{prop:obedience} establishes a separate Bayesian implementation of the interior symmetric outcome when both own signals are observed and actions can be revised.
 
 The main result is a closed-form characterization of symmetric adoption. When its equilibrium is interior, expected participant payoff is strictly below the outcome in which everyone uses the private policy. The mechanism is a congestion externality: an adopter values its own improvement in selection quality but does not internalize the costs of its increasingly correlated action for others. This result is not a claim that more information is intrinsically harmful. An unrestricted planner could ignore a new optional signal, and a richer agent could implement a different mapping from information to action.
 
@@ -85,7 +85,7 @@ There are two opportunities and a binary state $\theta$, with equal prior probab
 \begin{assumption}[Information and timing]\label{ass:timing}
 The private policy $H$ selects the good opportunity with probability $a$, independently across participants conditional on $\theta$. The common policy $A$ selects it with probability $b$, and all adopters of $A$ receive the same correctness realization. The common realization is independent of all private realizations conditional on $\theta$. Parameters satisfy $1/2<a<b<1$. Participants are risk neutral, know the model, and choose policies simultaneously before observing the state or any signal. The selected policy then executes its recommendation without an override. Policy adoption is free.
 \end{assumption}
-This is a restriction on executable decision procedures. The menu does not include signal pooling, congestion-aware recommendations, or action revision. Consequently the equilibrium statements below do not characterize unrestricted information acquisition or post-signal Bayesian action choice. They can describe delegated policies selected before a decision window closes, but whether such commitment is realistic is an empirical question.
+This is a restriction on executable decision procedures. The menu does not include signal pooling, congestion-aware recommendations, or action revision. Consequently the baseline equilibrium statements do not characterize unrestricted information acquisition or action choice. Proposition~\ref{prop:obedience} separately treats Bayesian action choice given both own signals. They can describe delegated policies selected before a decision window closes, but whether such commitment is realistic is an empirical question.
 
 
 \begin{figure}[tb]
@@ -255,8 +255,34 @@ Together with \eqref{eq:loss}, this implies that equilibrium payoff increases wi
 \addplot[gray,dotted] coordinates {(0,0)(1,0)};
 \end{axis}
 \end{tikzpicture}
-\caption{Comparative statics at fixed and endogenous adoption, holding marginal accuracies and the numerical calibration fixed. Greater commonality always lowers payoff at fixed adoption. On the interior-equilibrium branch it raises payoff by discouraging adoption. The kink occurs where full adoption ceases to be an equilibrium.}\label{fig:commonality}
+\caption{Comparative statics at fixed and endogenous adoption, holding marginal accuracies and the numerical calibration fixed. Greater commonality always lowers payoff at fixed adoption. On the interior-equilibrium branch it raises payoff by discouraging adoption. The transition is at $r^*=203/792\approx0.2563$, where $\delta/L=\alpha+\beta(r^*)$; full adoption ceases to be an equilibrium above this threshold.}\label{fig:commonality}
 \end{figure}
+
+\subsection{Bayesian implementation after observing both signals}
+The policy-commitment restriction can be relaxed for the interior symmetric outcome under a precise information structure. Suppose every participant observes its own pair $(H_i,A_i)$ before choosing an action, but not the state, the commonality regime, others' signals, or realized occupancy. Signal access is free; the joint signal law is as above, with label symmetry and conditional independence of private signals. Participants may choose any randomized mapping from their own pair to the two actions. Independent randomization is available. This is a simultaneous Bayesian action game, rather than a sequential game with observable histories.
+
+\begin{proposition}[Post-signal implementation]\label{prop:obedience}
+Fix $r\in[0,1]$ and suppose $0<p_E(r)<1$. The following strategy is a symmetric Bayesian Nash equilibrium: follow the recommendation when $H_i=A_i$; when they disagree, follow $A_i$ with probability $p_E(r)$ and $H_i$ otherwise. Its joint action distribution and expected payoff coincide with the symmetric mixed policy outcome. Thus \eqref{eq:loss} also holds in this specified Bayesian game.
+\end{proposition}
+\begin{proof}
+Against opponents using the proposed strategy with probability $p$, let $G_A$ and $G_H$ be unconditional expected gains from following the respective signal instead of choosing its opposite. Pairwise conditioning gives
+\begin{align}
+ G_A&=d(2b-1)-L\{(1-p)(2q_{HA}-1)+p(2q_{AA}(r)-1)\},\\
+ G_H&=d(2a-1)-L\{(1-p)(2q_{HH}-1)+p(2q_{HA}-1)\}.
+\end{align}
+Their difference is $G_A-G_H=2D(p,r)$, where $D(p,r)=\delta-L\{\alpha+\beta(r)p\}$. Write $\Delta_{=}$ for the conditional gain from following the common recommendation on agreement, and $\Delta_{\ne}$ for the gain from choosing $A_i$ rather than $H_i$ on disagreement. Label symmetry makes each gain identical for the two labeled signal pairs in its event. The agreement event has probability $q_{HA}$, and adding or subtracting the two unconditional gains yields
+\begin{equation}\label{eq:conditionalgains}
+ \Delta_{=}=\frac{G_A+G_H}{2q_{HA}},\qquad
+ \Delta_{\ne}=\frac{D(p,r)}{1-q_{HA}}.
+\end{equation}
+At an interior equilibrium $D(p_E,r)=0$. Substituting
+$d=L\{\alpha+\beta(r)p_E\}/(b-a)$ and using \eqref{eq:betar} gives
+\begin{equation}\label{eq:obedience}
+ G_A=G_H=\frac{2Lrb(1-b)(2a-1)}{b-a}\,p_E\geq0.
+\end{equation}
+Thus agreement is followed optimally (strictly when $r>0$), and either action is optimal on disagreement. These exhaust the four possible private signal types and all binary-action deviations. Drawing an independent policy coin before signals, or drawing the same coin only on disagreement, produces the same actions conditional on every signal realization. The induced joint distribution and payoff therefore coincide.
+\end{proof}
+This is an existence result, not a uniqueness or learning-stability result. It does not cover richer observations, public disclosure of the commonality regime, communication, costly information acquisition, or unrestricted recommendation design. It also does not establish post-signal implementation of the asymmetric pure policy equilibria. Under the same interior condition, the private-only baseline is itself an equilibrium when only $H_i$ is available: following it yields conditional gain $(2a-1)[d-L(2a-1)]>0$. The comparison can therefore be read as equilibrium deterioration following expanded signal access within these specific games.
 
 \subsection{Execution outside the policy menu}
 If participants observe true opportunity values and can revise actions, they play a different congestion game. Let $k$ choose the good opportunity. When both opportunities are occupied, the no-switch conditions are
@@ -267,7 +293,7 @@ The left inequality compares a good-opportunity user's current payoff with its p
 \begin{equation}
  Nv_0+dk-c\{k(k-1)+(N-k)(N-k-1)\},
 \end{equation}
-whose continuous optimum is $k=N/2+d/(4c)$, clipped to $[0,N]$ and then checked at adjacent integers. Full information and efficient coordination are distinct. These benchmarks do not extend Theorem~\ref{thm:mixed} to unrestricted agents; they demonstrate why the allowed policy set must be stated.
+whose continuous optimum is $k=N/2+d/(4c)$, clipped to $[0,N]$ and then checked at adjacent integers. Full information and efficient coordination are distinct. These full-information benchmarks differ from both the policy game and Proposition~\ref{prop:obedience}; they demonstrate why the allowed policy set must be stated.
 
 \section{Computational verification}
 \subsection{Design}
@@ -280,7 +306,7 @@ Thus $L=1.98$, $\alpha=0.04$, and $\beta=0.40$. The parameters illustrate an int
 
 Within each market, the realized mean payoff is computed from occupancy. Monte Carlo standard errors use the sample variance of market means divided by the number of markets. Individual outcomes within a market are dependent and are not treated as independent samples. The four conditions use successive unpaired draws of the same generator.
 
-The implementation also performs exact enumeration for $N=4$ at $p\in\{0,0.17,0.5,1\}$, checks 6,564 interior cases on a parameter grid, and verifies 1,404 finite-count configurations with Python's exact rational arithmetic. The latter checks use three population sizes, three signal pairs, four cost values, and every feasible adopter count. These are numerical and algebraic consistency checks, not a proof-assistant certification or empirical validation.
+The implementation also performs exact enumeration for $N=4$ at $p\in\{0,0.17,0.5,1\}$, checks 6,564 interior cases on a parameter grid, and verifies 1,404 finite-count configurations with Python's exact rational arithmetic. The latter checks use three population sizes, three signal pairs, four cost values, and every feasible adopter count. A separate exact state-and-signal enumeration checks Proposition~\ref{prop:obedience} in 37 interior parameter cases (148 labeled own-signal types), plus 16 off-equilibrium types. These are numerical and algebraic consistency checks, not a proof-assistant certification or empirical validation.
 
 \subsection{Results}
 \begin{table}[tb]
@@ -324,12 +350,12 @@ The symmetric equilibrium and restricted optimum are therefore
  p_E=\frac{401}{990},\qquad p_S=\frac{151}{990},\qquad
  w(p_E)-w(0)=-\frac{401}{12500}=-0.03208.
 \]
-For pure adoption, $T=401/10=40.1$. The only interior equilibrium count is consequently $m=41$, since $40\leq40.1\leq41$. The sufficient loss condition holds because $(N-1)\alpha=99/25>2/5=\beta$. The fixed-count continuous optimum is $15.6$; evaluating the adjacent integers selects $m=16$. This example illustrates the proofs with exact fractions rather than relying on a simulation to establish the sign.
+For pure adoption, $T=401/10=40.1$. The only interior equilibrium count is consequently $m=41$, since $40\leq40.1\leq41$. The sufficient loss condition holds because $(N-1)\alpha=99/25>2/5=\beta$. The fixed-count continuous optimum is $15.6$; evaluating the adjacent integers selects $m=16$. For post-signal implementation at $r=1$, $G_A=G_H=802/3125$, so the gain on agreement is $\Delta_{=}=401/875>0$ and on disagreement $\Delta_{\ne}=0$. Exact conditional enumeration verifies both statements. This example illustrates the proofs with exact fractions rather than relying on a simulation to establish the sign.
 
 \section{Discussion and limitations}
 The analysis identifies a conditional externality from adopting common executable advice. Better marginal signal accuracy does not determine the value of a population-wide deployment: dependence and congestion also matter. Nevertheless, commonality need not be harmful. With zero congestion, more accurate policies improve payoffs. At $a=1/2$, the interior-equilibrium loss vanishes because $\alpha=0$. If capacity scales with population so that $c=\kappa/(N-1)$, the factor $L$ remains fixed and there is no mechanical population-size amplification.
 
-The main modeling restriction is policy commitment. A user who can combine private and public information, predict congestion, or randomize execution has a larger strategy space. Theorem~\ref{thm:mixed} does not characterize that game. A second restriction is homogeneous preferences and linear, symmetric congestion. Heterogeneous tasks and nonlinear costs alter the collision-to-payoff mapping. A third is the independence of private errors conditional on the state. Real human and algorithmic judgments can share errors even without a common provider.
+The baseline model restricts policy execution. Proposition~\ref{prop:obedience} establishes that the interior symmetric outcome can also be sustained when agents optimize after observing both of their signals. Its private information structure is essential; richer observations and recommendation design remain outside the result. Homogeneous preferences and linear, symmetric congestion are further restrictions. Heterogeneous tasks and nonlinear costs alter the collision-to-payoff mapping. Private errors are independent conditional on the state; real human and algorithmic judgments can share errors even without a common provider.
 
 The computational results are internal verification only. There are no live language-model calls, human participants, external datasets, or estimates of economy-wide losses. Nor does this static model demonstrate dynamic instability or chaos. A credible application would measure resource costs and manipulate evidence overlap, policy overlap, and congestion feedback separately. Group-level randomization is needed because decisions interact within markets; treating agents as independent observational units would understate uncertainty.
 
