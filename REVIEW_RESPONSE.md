@@ -22,8 +22,12 @@ The information restriction is explicit: participants do not observe the state, 
 
 **Treating praise as validation.** Broad statements that every derivation is certified, or that the work is ready for a specific journal, are not evidence of novelty or peer review. The existing verification record remains explicit about these limits. Full-text comparison with the closest firm-entry work remains outstanding.
 
+## Later originality assessment (7 November 2026)
+
+This work is currently an explanatory rethinking of established research. Mathematical validity does not establish novelty. The later-identified price-of-anarchy paper and unresolved closest-paper comparisons are documented in RESEARCH_CONTEXT.md. The manuscript and final LaTeX slide state this explicitly.
+
 ## Presentation and publication
 
-The author remains Omkar Tripathi, Independent Researcher. The author block links directly to the research repository. The public disclosure states that AI was used. The presentation is now five static slides with an editable payoff chart, citation notes, and separate PNGs for sharing. Video deliverables and video references are excluded.
+The author remains Omkar Tripathi, Independent Researcher. The author block links directly to the research repository. The public disclosure states that AI was used. The presentation is now five static slides with an vector payoff chart, citation notes, and separate PNGs for sharing. Video deliverables and video references are excluded.
 
 Before journal submission, seek an independent game-theory review of Proposition 6.1 and compare the complete closest papers, especially Chi and Yang. The current release can be shared as a working paper with a request for technical criticism. It should not be described as peer reviewed, as a proof of chaos, or as an empirical estimate of AI's economic impact.

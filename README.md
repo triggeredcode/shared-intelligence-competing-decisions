@@ -3,9 +3,13 @@
 **Policy Adoption and Congestion under Common Advice**  
 Omkar Tripathi · Independent Researcher · [Paper repository](https://github.com/triggeredcode/shared-intelligence-competing-decisions)
 
-[Read the paper](manuscript.pdf) · [Five-slide overview](slides/shared-intelligence-slides.pdf) · [Editable slides](slides/shared-intelligence-slides.pptx) · [Verification record](CHECKS.md) · [Review response](REVIEW_RESPONSE.md)
+[Read the paper](manuscript.pdf) · [LaTeX slide overview](slides/shared-intelligence-slides.pdf) · [Editable LaTeX](slides/research-slides.tex) · [Verification record](CHECKS.md) · [Review response](REVIEW_RESPONSE.md)
 
 Working paper, version 1.1, 6 November 2026. Not peer reviewed.
+
+## Closing remark on research status
+
+**This is currently an explanatory mathematical note: a rethinking and illustration of established research. An original research contribution has not been established.** The central intuition already appears in algorithmic-monoculture and congestion research. The formulas and Bayesian implementation require further comparison with existing theorems. See [Research context and relevant papers](RESEARCH_CONTEXT.md), including the later-identified *Price of Anarchy of Algorithmic Monoculture*.
 
 ## Research question
 
@@ -45,7 +49,7 @@ pdflatex manuscript.tex
 - `references.bib`, `manuscript.bbl`: bibliography source and compiled entries.
 - `analysis.py`: simulations, enumeration, and mathematical consistency checks.
 - `verify_obedience.py`, `obedience_results.json`: exact conditional Bayesian payoff checks.
-- `slides/`: five static slides in PDF, editable PowerPoint, and individual PNG formats.
+- `slides/`: five static LaTeX slides in PDF, editable source, and individual PNG formats.
 - `REVIEW_RESPONSE.md`: accepted improvements and corrections from an external AI review.
 - `results.json`, `finite_results.json`, `simulation_results.csv`: numerical outputs.
 - `curve.dat`, `commonality.dat`, `table_rows.tex`: generated figure and table inputs.

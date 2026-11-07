@@ -7,7 +7,7 @@ Version: 1.1, 6 November 2026.
 - Tectonic 0.17.0 compiled the complete LaTeX manuscript, ran BibTeX, and resolved
   cross-references. The final log contains no overfull/underfull boxes, undefined
   references, or LaTeX/natbib warnings.
-- Bibliography audit: all 13 BibTeX entries are cited; every citation key resolves.
+- Bibliography audit: all 14 BibTeX entries are cited; every citation key resolves.
 - Cross-reference audit: 32 unique labels, all referenced labels defined.
 - Abstract: 202 words. Five keywords. Author block uses the supplied name and
   affiliation; the public link points directly to the paper repository.
@@ -29,7 +29,7 @@ Version: 1.1, 6 November 2026.
 - Exact Bayesian conditional enumeration: 37 equilibrium cases / 148 labeled own-signal types, plus 16 off-equilibrium types. All assertions pass.
 - Existing numerical output files rerun byte-for-byte; new obedience output also matches.
 - The exact commonality threshold is 203/792; the disputed arXiv reference was confirmed at its official record.
-- Five slides rendered and inspected individually. PowerPoint package integrity passed; the editable chart and its PDF export were checked for correct markers, axes, and values.
+- LaTeX presentation rendered and inspected; vector chart values match the model. Closing remark added to slides and manuscript on 7 November 2026; 14 bibliography entries resolve. Research originality remains unestablished.
 
 ## Scope of these checks
 

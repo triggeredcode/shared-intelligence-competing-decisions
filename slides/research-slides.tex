@@ -1,0 +1,106 @@
+\documentclass{article}
+\usepackage[paperwidth=320mm,paperheight=180mm,margin=0mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,tikz,pgfplots}
+\usepackage[colorlinks=true,urlcolor=teal]{hyperref}
+\pgfplotsset{compat=1.18}
+\definecolor{paper}{HTML}{F5F0E5}
+\definecolor{ink}{HTML}{173D40}
+\definecolor{teal}{HTML}{167A78}
+\definecolor{gold}{HTML}{D49B42}
+\definecolor{red}{HTML}{AE5142}
+\definecolor{muted}{HTML}{627373}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\newcommand{\sz}[2]{\fontsize{#1}{#2}\selectfont}
+\newcommand{\txt}[5]{\node[anchor=north west,text width=#3mm,inner sep=0pt,align=left,text=#4] at (#1,-#2) {#5};}
+\newcommand{\base}[2]{\fill[#1] (0,0) rectangle (320,-180);\draw[#2,opacity=.25] (16,-163)--(304,-163);\txt{16}{168}{260}{#2}{\sffamily\sz{8}{10}OMKAR TRIPATHI\quad /\quad SHARED INTELLIGENCE, COMPETING DECISIONS}\txt{292}{168}{15}{#2}{\sffamily\sz{8}{10}\thepage\ / 5}}
+\newcommand{\beginpage}{\null\begin{tikzpicture}[remember picture,overlay,x=1mm,y=1mm,shift={(current page.north west)}]}
+\newcommand{\finishslide}{\end{tikzpicture}\newpage}
+\begin{document}
+\beginpage
+\base{ink}{paper}
+\txt{16}{15}{260}{gold}{\sffamily\sz{10}{12}\textbf{INFORMATION ECONOMICS}\quad /\quad A WORKING PAPER}
+\txt{16}{37}{185}{paper}{\sz{34}{38}When everyone follows\\the same best advice.}
+\txt{17}{87}{154}{paper}{\sffamily\sz{14}{19}Better predictions can concentrate choices.\\When opportunities are scarce, accuracy\\and economic value can pull apart.}
+\txt{17}{132}{170}{gold}{\sz{18}{22}\textit{From Braess's paradox to shared advice}}
+\txt{17}{149}{180}{paper}{\sffamily\sz{9}{12}Mathematical model\enspace $\cdot$\enspace Synthetic computations\enspace $\cdot$\enspace Not peer reviewed}
+% Schematic: two decision paths converge on a congestible opportunity.
+\draw[paper!30, line width=1.3pt] (211,-61) to[out=20,in=155] (287,-89);
+\draw[paper!30, line width=1.3pt] (211,-119) to[out=-20,in=205] (287,-89);
+\draw[gold,line width=2.5pt,->] (211,-61) to[out=-25,in=120] (263,-89);
+\draw[gold,line width=2.5pt,->] (211,-119) to[out=25,in=240] (263,-89);
+\fill[paper] (211,-61) circle(2.5);\fill[paper] (211,-119) circle(2.5);
+\fill[gold] (269,-89) circle(9);
+\node[text=ink,font=\sz{20}{22}] at (269,-89) {$q\uparrow$};
+\txt{202}{41}{95}{paper}{\sffamily\sz{10}{12}Different decision makers}
+\txt{235}{130}{65}{gold}{\sffamily\sz{11}{14}\textbf{Same destination.}\\More competition.}
+\finishslide
+\beginpage
+\base{paper}{muted}
+\txt{16}{14}{280}{teal}{\sffamily\sz{10}{12}\textbf{01\quad THE RESEARCH PATH}}
+\txt{16}{28}{285}{ink}{\sz{29}{34}From roads to recommendations.}
+\draw[gold,line width=1.3pt] (21,-68)--(21,-143);
+\foreach \y in {68,93,118,143}{\fill[teal] (21,-\y) circle(1.8);}
+\txt{29}{62}{128}{teal}{\sffamily\sz{9}{11}\textbf{1968 / 2005}\quad BRAESS}
+\txt{29}{69}{125}{ink}{\sz{14}{17}A new route can worsen traffic equilibrium.}
+\txt{29}{87}{128}{teal}{\sffamily\sz{9}{11}\textbf{2018}\quad ACEMOGLU ET AL.}
+\txt{29}{94}{125}{ink}{\sz{14}{17}More route information can hurt travelers.}
+\txt{29}{112}{128}{teal}{\sffamily\sz{9}{11}\textbf{2021}\quad KLEINBERG \& RAGHAVAN}
+\txt{29}{119}{125}{ink}{\sz{14}{17}Common rankings can reduce collective hiring performance.}
+\txt{29}{137}{128}{teal}{\sffamily\sz{9}{11}\textbf{2025 / 2026}\quad BAEK ET AL.}
+\txt{29}{144}{125}{ink}{\sz{14}{17}Congestion-aware differentiation matters.}
+\fill[ink] (168,-61) rectangle (304,-151);
+\txt{176}{70}{118}{gold}{\sffamily\sz{10}{12}\textbf{THE MODEL'S ACCOUNTING IDENTITY}}
+\node[text=paper] at (236,-96) {\sz{25}{29}$\displaystyle\frac{\mathbb E[W]}{N}=\mu-c(N-1)q$};
+\txt{177}{114}{119}{paper}{\sffamily\sz{12}{16}$\mu$: expected opportunity value\\$q$: probability two choices coincide\\$c$: resource cost per competitor}
+\txt{176}{151}{125}{muted}{\sffamily\sz{7}{9}Sources: manuscript \S2 and Proposition 3.1; full references in the accompanying source.}
+\finishslide
+\beginpage
+\base{paper}{muted}
+\txt{16}{14}{280}{teal}{\sffamily\sz{10}{12}\textbf{02\quad THE EQUILIBRIUM RESULT}}
+\txt{16}{28}{290}{ink}{\sz{29}{34}Individually attractive. Collectively costly.}
+\txt{17}{52}{205}{muted}{\sffamily\sz{10}{13}Exact payoff change from private-only baseline; adoption range shown: 0--50\%.}
+\begin{scope}[shift={(17,-151)}]
+\begin{axis}[width=191mm,height=91mm,scale only axis=false,xmin=0,xmax=.5,ymin=-.08,ymax=.04,xtick={0,.1,.2,.3,.4,.5},xticklabels={0\%,10\%,20\%,30\%,40\%,50\%},ytick={-.08,-.04,0,.04},tick label style={font=\sffamily\small,text=muted},axis line style={draw=muted!50},axis x line*=bottom,axis y line*=left,grid=major,grid style={draw=muted!15},xlabel={\sffamily Common-policy adoption probability $p$},xlabel style={font=\small,text=muted},scaled y ticks=false,yticklabel style={/pgf/number format/fixed,/pgf/number format/precision=2}]
+\addplot[teal,line width=2pt,domain=0:.5,samples=151] {.4*x-1.98*(.08*x+.4*x*x)};
+\addplot[muted,dashed,domain=0:.5] {0};
+\addplot[only marks,mark=*,mark size=3pt,gold] coordinates {(.1525252525,.0184250505)};
+\addplot[only marks,mark=*,mark size=3pt,red] coordinates {(.4050505051,-.03208)};
+\node[anchor=south west,text=ink,font=\small] at (axis cs:.1525,.022){$p_S$};
+\node[anchor=south west,text=red,font=\small] at (axis cs:.405,-.028){$p_E$};
+\end{axis}\end{scope}
+\txt{224}{65}{80}{gold}{\sz{38}{40}15.3\%}
+\txt{225}{83}{77}{ink}{\sffamily\sz{12}{15}Payoff-maximizing\\independent adoption}
+\txt{224}{109}{80}{red}{\sz{38}{40}40.5\%}
+\txt{225}{127}{77}{ink}{\sffamily\sz{12}{15}Equilibrium adoption\\Loss: 0.03208 per person}
+\txt{225}{143}{77}{muted}{\sffamily\sz{8}{10}$N=100$, $a=.6$, $b=.8$, $c=.02$, $d=2$. \\Arbitrary payoff units.}
+\finishslide
+\beginpage
+\base{ink}{paper}
+\txt{16}{14}{280}{gold}{\sffamily\sz{10}{12}\textbf{03\quad A RESULT IN THIS MODEL}}
+\txt{16}{29}{290}{paper}{\sz{28}{33}The loss can survive rational adaptation.}
+\txt{17}{52}{285}{paper}{\sffamily\sz{13}{17}Each person sees only their own private and shared recommendations.\\At the specified interior equilibrium, the policy outcome remains implementable.}
+\draw[paper!25] (160,-83)--(160,-126);
+\txt{17}{85}{130}{gold}{\sffamily\sz{10}{12}\textbf{THE SIGNALS AGREE}}
+\txt{17}{97}{130}{paper}{\sz{21}{25}Follow the recommendation.}
+\txt{17}{115}{130}{paper}{\sffamily\sz{12}{15}Conditional gain: $401/875>0$}
+\txt{177}{85}{125}{gold}{\sffamily\sz{10}{12}\textbf{THE SIGNALS DISAGREE}}
+\txt{177}{97}{125}{paper}{\sz{21}{25}Either action is optimal.}
+\txt{177}{115}{125}{paper}{\sffamily\sz{12}{15}Mixing with $p_E=401/990$ sustains equilibrium.}
+\txt{17}{139}{280}{paper}{\sffamily\sz{10}{14}Proposition 6.1: an existence result under a specific information structure. The figures above use the illustrative calibration.\\The model does not establish real-world economic losses, dynamic chaos, or uniqueness.}
+\txt{17}{155}{280}{gold}{\sffamily\sz{8}{10}\href{https://github.com/triggeredcode/shared-intelligence-competing-decisions}{\color{gold}github.com/triggeredcode/shared-intelligence-competing-decisions}\quad $\cdot$\quad AI was used.}
+\finishslide
+\beginpage
+\base{paper}{muted}
+\txt{16}{14}{280}{teal}{\sffamily\sz{10}{12}\textbf{04\quad CLOSING REMARK}}
+\txt{16}{29}{290}{ink}{\sz{29}{34}A rethinking of established research.}
+\txt{17}{52}{285}{ink}{\sffamily\sz{14}{19}This note reworks familiar congestion and information externalities in a small model of shared advice. Its original research contribution has not been established.}
+\txt{17}{78}{138}{teal}{\sffamily\sz{10}{12}\textbf{FOUNDATIONS AND CLOSE PRECEDENTS}}
+\txt{17}{89}{138}{ink}{\sffamily\sz{11}{16}Braess (1968; English translation 2005): traffic planning.\\Acemoglu et al. (2018): informational Braess' paradox.\\Kleinberg \& Raghavan (2021): algorithmic monoculture.\\Baek, Bastani \& Chen (2025/2026): strategic hiring.}
+\txt{172}{78}{133}{teal}{\sffamily\sz{10}{12}\textbf{FURTHER COMPARISON REQUIRED}}
+\txt{172}{89}{133}{ink}{\sffamily\sz{11}{16}Kleinberg, Sinanaj \& Tardos (2026): price of anarchy of algorithmic monoculture.\\Chi \& Yang (2026): shared intelligence and firm entry.\\Chiang et al. (2026): recommendation-induced congestion.}
+\txt{17}{133}{285}{muted}{\sffamily\sz{10}{14}The explicit formulas and Bayesian implementation are results within this model; their novelty relative to prior work remains unverified. Mathematical checks establish internal consistency, not originality.}
+\txt{17}{150}{285}{teal}{\sffamily\sz{9}{12}Full titles, links, additional references, and limits of the comparison: RESEARCH\_CONTEXT.md in the repository.}
+\end{tikzpicture}
+\end{document}
